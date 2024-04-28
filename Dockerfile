@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=8000"]
+CMD [ "gunicorn", "--config" , "gunicorn_config.py", "app:app"]
